@@ -66,7 +66,7 @@ namespace XamarinTutorial.src.model.domain
 {
     public class Prediction
     {
-        [JsonProperty] <---- AQUI DEFINE A PROPRIEDADE JSON
+        [JsonProperty] // <---- AQUI DEFINE A PROPRIEDADE JSON
         public string id { get; set; }
         
         ...
@@ -74,16 +74,16 @@ namespace XamarinTutorial.src.model.domain
 
 A classe ```SearchPlace``` conta com os elementos visuais e a função de busca da api, não façam isso em casa, isso foi feito por profissionais, com o equipamento adequado =):
 ```csharp
-  var stack = new StackLayout();  <--- Empilha os elementos
-  var search = new SearchBar();   <--- Barra de Busca
+  var stack = new StackLayout();  // <--- Empilha os elementos
+  var search = new SearchBar();   // <--- Barra de Busca
   
   ...
 
-  stack.Children.Add(search);     <--- adciona os elementos na pilha
+  stack.Children.Add(search);     // <--- adciona os elementos na pilha
   
   ...
   
-  search.TextChanged += async (sender, e) =>      <------ operador lambda para atribuição de função a um evento
+  search.TextChanged += async (sender, e) =>      // <------ operador lambda para atribuição de função a um evento
   {
       try
       {
@@ -105,6 +105,8 @@ Por ultimo, troque a referência da página principal da classe App.xaml.cs para
       MainPage = new SearchPlace();
   }
  ```
- após isso é só executar:
- 
+Após isso é só executar:
+<p align="center">
+ <img src="/screenshots/app.gif" width="400">
+</p>
  
