@@ -8,6 +8,8 @@ namespace XamarinTutorial.src.view.pages
 {
     public class SearchPlace : ContentPage
     {
+        private const string API_KEY = "your api key";
+
         public SearchPlace()
         {
             var stack = new StackLayout();
@@ -23,7 +25,7 @@ namespace XamarinTutorial.src.view.pages
                 {
                     var searchBar = (SearchBar)sender;
                     var client = new HttpClient();
-                    var url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + searchBar.Text + "&types=geocode&key=AIzaSyDMBuzI5PAiTsGj6UkIS8JsNLq1PfRNqyU";
+                    var url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + searchBar.Text + "&types=geocode&key=" + API_KEY;
 
                     var json = await client.GetStringAsync(url);
                     var predictionList = JsonConvert.DeserializeObject<GooglePlaceResult>(json);
